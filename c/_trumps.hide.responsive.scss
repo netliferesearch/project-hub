@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    #HIDE-RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Responsive hide classes based on your responsive settings.
+ */
+@each $breakpoint in $breakpoints {
+
+    $alias:     nth($breakpoint, 1);
+
+    @if ($alias != "retina") {
+        @include media-query($alias) {
+            .#{$inuit-widths-namespace}u-hide-#{$alias}    { display: none !important; }
+        }
+    }
+
+}

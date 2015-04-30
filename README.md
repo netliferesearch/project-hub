@@ -11,3 +11,9 @@ Here are a few details on what I thought needed improvement:
 You can see the finished result here: [project-hub.superfriend.ly](http://project-hub.superfriend.ly/)
 
 Pull request or fork at your leisure. Happy Project Hubbing!
+
+To run Gulp do this:
+* `cd /path/to/project/` To run the command from right destination.
+* `npm install -g gulp` to install gulp globally (you might need to write `sudo` before as well)
+* `npm install` to install gulp in this project
+* `gulp` to combine the js / compile the scss

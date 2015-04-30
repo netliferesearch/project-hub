@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #BUTTONS
+    Our extensions to the btn-object.
+    If we want other paddings see which variables to turn on
+    in bower_components/inuit-buttons/objects.buttons.scss
+\*------------------------------------*/
+
+/*
+ *   The main primary button
+ */
+.c-btn--primary{
+    background-color: $black;
+    font-family: $font-family-heading;
+    border: 1px solid $black;
+    border-radius: $btn-radius;
+    color: $white;
+    &:hover, &:focus{
+        background: lighten($green, 5%);
+        color: $black;
+        svg{
+            fill: $black;
+        }
+    }
+}
+

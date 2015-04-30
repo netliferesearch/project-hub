@@ -1,0 +1,30 @@
+.c-wrapper{
+    margin: auto;
+    max-width: 1080px;
+    padding: 0 $spacing/2;
+    @include media-query(small) {
+        padding: 0 $spacing/4;
+    }
+
+    .wrapper{
+        padding: 0;
+    }
+}
+
+.c-wrapper--small{
+    max-width: 600px;
+}
+
+.c-wrapper__header{
+    @include media-query(medium) {
+        position: fixed;
+        top: 0;
+        width: $header-width;
+    }
+}
+
+.c-wrapper__content{
+    @include media-query(medium) {
+        padding-left: $header-width + $spacing;
+    }
+}

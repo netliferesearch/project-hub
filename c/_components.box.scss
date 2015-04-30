@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #AVATAR
+    Our extensions to the box-object.
+    If we want other paddings see which variables to turn on
+    in bower_components/inuit-box/objects.box.scss
+\*------------------------------------*/
+
+/**
+ * These rules are modifiers of `.box {}` in bower_components/inuit-box/objects.box.scss.
+ */
+
+.o-box{
+	border-left: 1px solid transparent;
+}
+
+.c-box--primary {
+	border-radius: $border-radius;
+	background: $white;
+	border: 1px solid $gray--x-light;
+	position: relative;
+}

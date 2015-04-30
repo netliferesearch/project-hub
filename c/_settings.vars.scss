@@ -1,0 +1,115 @@
+/*------------------------------------*\
+    #VARS
+    Our own variables to use throughout the project.
+\*------------------------------------*/
+
+$border-radius: 5px;
+$btn-radius: 3px;
+$font-family-heading: "avant-garde", Helvetica, Arial, sans-serif;
+$main-font-family:  "Georgia", serif;
+$font-size-primary: 16px;
+$font-size-small: 14px;
+$header-width: 250px;
+
+/**
+ * COLORS
+ * We always specify colors throughout our SCSS from these variables.
+ * Never use darken() etc. other places than here.
+ * We use a strict naming convention and indenting like below.
+ * If we have fewer than seven tones, we’ll define --light and --dark
+ * first to allow for adding intermediate tones at a later date.
+ *
+ * $color
+ *      $color--x-dark
+ *      $color--dark
+ *      $color--mid-dark
+ *      $color--mid-light
+ *      $color--light
+ *      $color--x-light
+ *
+ * NB: if you need to rename a Variable don't be afraid to do a global
+ * find and replace in the CSS so that the variables are correct
+ */
+
+
+
+
+$gray: #767676; //wcag-color for text on white background
+    $gray--xx-light: #F9F9F9;
+    $gray--x-light: #e9e9e9;
+    $gray--light: #DBDBDB;
+    $gray--mid-light: #AEAEAE;
+    $gray--mid-dark: #565656;
+    $gray--dark: #333;
+
+$blue: #2980b9;
+    $blue--x-light: #F6F9FD;
+    $blue--light: darken( $blue--x-light, 2%);
+    $blue--mid-light: #42B4D6;
+    $blue--dark: #34495E;;
+    $blue--x-dark: #2B3C4E;
+
+$orange: #F47920;
+    $orange--dark: darken($orange, 7%);
+
+$green: #619210;
+  $green--light: #A7CC25;
+
+$pink: #E44771;
+
+
+$white: #fff;
+$black: #000;
+$bg: #F6f6f6;
+$link: $green;
+
+
+
+
+
+/**
+ * RESPONSIVE BREAKPOINTS
+ * This is where we define all our breakpoints.
+ * These also generate helper-classes with inuit that we can use:
+ * f.ex: palm-1/2 (for width), lap-pt(for padding-top on lap-size), desk-hide etc.
+ * See all alternatives in css/bower_components/inuit-spacing-responsive/,
+ * css/bower_components/inuit-widths-responsive and _trumps.hide.responsive.scss
+ *
+ * We can also use them with a media-query mixin like this:
+ * Usage:
+ *  @include media-query(palm) {
+ *
+ *  }
+ */
+
+/**
+ * Modifying inuits defaults for helper-classes and widths.
+ */
+$breakpoints: (
+    "small"               "screen and (max-width: 750px)",
+    "medium"                "screen and (min-width: 750px)"
+);
+
+/**
+ * Z-index management
+ * It is important for us to have 100% control over the z-index values
+ * and where they are positioned. We therefore have this helper:
+ *
+ * 1. This refers to the values below
+ *
+ * Usage:
+ *  .overlay {
+ *      z-index: z(mask); //[1]
+ *  }
+ */
+
+$z-layers: (
+  bottomless-pit: -9999,
+  default: 1,
+  dropdown-mask: 2000,
+  dropdown: 3000,
+  modal-mask: 4000,
+  modal: 4001
+);
+
+$inuit-base-background-color: $bg;

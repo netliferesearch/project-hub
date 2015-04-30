@@ -1,0 +1,53 @@
+.c-timeline{
+	padding-left: $spacing*3;
+	position: relative;
+	&::before{
+		content: "";
+		width: 2px;
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: $spacing*1.5;
+		top: $spacing + 1px;
+		background: $green--light;
+		box-sizing: content-box;
+		 z-index: z(default); //[1]
+	}
+	&:last-child,
+	&:first-child{
+		&::before{
+			display: none;
+		}
+	}
+
+	h1{
+		line-height: 1.1;
+	}
+	time{
+		color: $gray--mid-light;
+		font-style: italic;
+	}
+}
+
+.c-timeline--future{
+	color: $gray--mid-light;
+	&::before{
+		top: -$spacing;
+		padding-bottom: $spacing;
+	}
+}
+
+.c-timeline__icon{
+	width: $spacing*2;
+	height: $spacing*2;
+	position: absolute;
+	left: $spacing/2;
+	top: $spacing;
+	z-index: z(dropdown); //[1]
+}
+
+.c-timeline__add{
+	.c-timeline__icon{
+	margin-top: -$spacing;
+	}
+}

@@ -1,0 +1,182 @@
+/*------------------------------------*\
+    This SCSS is based upon inuit.css (https://github.com/inuitcss/getting-started).
+    We're importing default blocks from inuit (all the files that's inside the ../bower_components folder).
+    These files we can not change. However these are heavily based on SCSS variables, so we can change
+    these by supplying the specific SCSS-variable before we import each SCSS-file.
+    By default most of inuit is turned off, so we need to turn on each class via variables before importing.
+
+    We have structured the CSS in a specific way to avoid specificity-problems.
+    Basically we are first targetting elements without class-names etc,
+    then we are applying abstract patterns before we apply most of our own styles and
+    in the end helper-classes and layouts that should overwrite everything else..
+    All classes are also have namespaces. This means that you by looking at the prefix-of the class can
+    see where it is located and whether you can modify the file or not.
+    Read http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/ for more information
+\*------------------------------------*/
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Vars.................Our own variables
+ * Defaults.............Globally-available variables and config from inui.
+ * Responsive...........Breakpoint-variables from inuit.
+ * Aliases..............Our remaps of inuits variables
+ *
+ * TOOLS
+ * Functions............Maths helpers to use throuhout the project
+ * Mixins...............Font size mixins
+ * Responsive...........Media query mixin
+ * Widths...............A mixin that generate the widths in trumps.
+ * Functions............Our additional functions (z-index helper etc.)
+ * Mixins...............Our additional mixins (placeholder-mixin)
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Reset................Extra removal of margins
+ * Box-sizing...........Better default `box-sizing`.
+ * Shared...............Similar margins troughout the project
+ *
+ * BASE
+ * Page.................High-, page-level styling
+ * Paragraphs...........Class for ingress on paragraphs
+ * Images...............Base image styling
+ * Lists................Base list styling
+ * Page.................Our own additions to to High-, page-level styling
+ *
+ * OBJECTS (o-prefix)
+ * Box..................Simple object to make boxed-off content.
+ * Flag.................Pattern with image to one side + text to the other
+ * Buttons..............Basic button-styling
+ * List-inline..........Simply displays a list as one horizontal row.
+ * List-ui..............List that creates blocky list items with lines between.
+ * Layout...............inuitcss’ answer to the traditional grid system.
+ * Tables...............inuitcss has some useful helpers for common table patterns.
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS (c-prefix)
+ * Box..................Our own modifiers to the box-object
+ * Buttons..............Our own modifiers to the btn-object
+ * Icon.................Icon helpers for modifying the svg-icons
+ *
+ * UTILITIES (u-prefix)
+ * Clearfix.............Simple clearfix helper
+ * Widths...............A series of helper classes for dealing with widths
+ * Widths responsive....A responsive extension to Widths
+ * Spacing..............Spacing helper classes
+ * Spacing responsive...A responsive extension to Spacing
+ * Hide responsive......Helper classes for hiding elements.
+ * Animate..............Classes for animating
+ * Helpers..............Our own additional helper-classes
+ */
+
+
+/*------------------------------------*\
+    #SETTINGS
+    Global variables, site-wide settings, config switches, etc.
+    These are just for SCSS – nothing here gets compiled to CSS directly
+\*------------------------------------*/
+@import "_settings.vars.scss"; //our own variables that we use throughout the project.
+@import "../node_modules/inuit-defaults/settings.defaults.scss";
+@import "../node_modules/inuit-responsive-settings/settings.responsive.scss";
+@import "_settings.aliases.scss"; //our own remaps of inuits variables
+
+
+
+/*------------------------------------*\
+    #TOOLS
+    Site-wide mixins and functions.
+    These are just for SCSS - nothing here gets directly compiled to CSS.
+\*------------------------------------*/
+
+@import "../node_modules/inuit-functions/tools.functions.scss";
+@import "../node_modules/inuit-mixins/tools.mixins.scss";
+@import "../node_modules/inuit-responsive-tools/tools.responsive.scss";
+@import "../node_modules/inuit-tools-widths/tools.widths.scss";
+@import "_tools.functions.scss"; //Our additional functions (z-index helper etc.)
+@import "_tools.mixins.scss"; //Our additional mixins (placeholder etc.)
+
+
+/*------------------------------------*\
+    #GENERIC
+    Low-specificity, far-reaching rulesets (e.g. resets).
+    Here we have our basic resets
+\*------------------------------------*/
+
+@import "generic.fonts.scss";
+@import "../node_modules/inuit-normalize/generic.normalize.scss";
+@import "../node_modules/inuit-reset/generic.reset.scss";
+@import "../node_modules/inuit-box-sizing/generic.box-sizing.scss";
+@import "../node_modules/inuit-shared/generic.shared.scss";
+
+
+/*------------------------------------*\
+    #BASE
+    Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+    Here we style all our HTML-elements with the basic styling we want.
+\*------------------------------------*/
+
+@import "../node_modules/inuit-page/base.page.scss";
+@import "../node_modules/inuit-paragraphs/base.paragraphs.scss";
+@import "../node_modules/inuit-images/base.images.scss";
+@import "../node_modules/inuit-lists/base.lists.scss";
+@import "../node_modules/inuit-headings/_base.headings.scss";
+@import "base.page.scss";
+
+
+
+/*------------------------------------*\
+    #OBJECTS (o-prefix)
+    Objects, abstractions, and design patterns (e.g. .media {}).
+    Here we import abstractions without styling etc.
+    Missing some abstractions? Read trough the SCSS-files imported to turn
+    on variables or get new ones from here:
+    https://github.com/inuitcss?query=objects.
+\*------------------------------------*/
+$inuit-namespace: o-;
+@import "../node_modules/inuit-box/objects.box.scss";
+@import "../node_modules/inuit-flag/objects.flag.scss";
+@import "../node_modules/inuit-buttons/objects.buttons.scss";
+@import "../node_modules/inuit-list-inline/objects.list-inline";
+@import "../node_modules/inuit-list-ui/objects.list-ui";
+$inuit-enable-layout--small: true;
+@import "../node_modules/inuit-layout/objects.layout.scss";
+@import "../node_modules/inuit-tables/objects.tables.scss";
+$inuit-namespace: null ;
+
+/*------------------------------------*\
+    #COMPONENTS (c-prefix)
+    Discrete, complete chunks of UI (e.g. .carousel {}).
+    This is the one layer that inuitcss doesn’t get involved with.
+    This is where we add our own components and modifiers to the objects.
+\*------------------------------------*/
+@import "components.wrapper.scss";
+@import "components.box.scss";
+@import "components.buttons.scss";
+@import "components.icon.scss";
+@import "components.pikaday.scss";
+@import "components.timeline.scss";
+@import "components.input.scss";
+@import "components.redactor.scss";
+
+
+/*------------------------------------*\
+    #Utilities (u-prefix)
+    High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {})
+    Helpers and layout-classes
+\*------------------------------------*/
+$inuit-namespace: u-;
+ @import "../node_modules/inuit-headings-trumps/trumps.headings.scss";
+ $inuit-namespace: null;
+ @import "../node_modules/inuit-clearfix/trumps.clearfix.scss";
+ @import "../node_modules/inuit-widths/trumps.widths.scss";
+ @import "../node_modules/inuit-responsive-widths/_trumps.widths-responsive.scss";
+ $inuit-enable-margins: true;
+ $inuit-enable-paddings: true;
+$inuit-enable-margins--small: true;
+ @import "../node_modules/inuit-spacing/trumps.spacing.scss";
+ @import "../node_modules/inuit-responsive-spacing/_trumps.spacing-responsive.scss";
+ @import "trumps.hide.responsive.scss";
+ @import "trumps.animate.scss";
+ @import "trumps.helpers.scss";
+ @import "trumps.shame.scss";

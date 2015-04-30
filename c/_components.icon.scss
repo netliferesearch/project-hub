@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #ICON
+    Icon is an element that we add to our svg-icons
+	to control their size and their colors
+\*------------------------------------*/
+
+/*
+ * Usage directly on the svg:
+ *  <svg viewBox="0 0 48 48" class="icon icon--small icon--gray">
+ *	    <use xlink:href="assets/icons.svg#folder"></use>
+ *  </svg>
+ */
+
+.c-icon{
+	width: $spacing*2;
+	height: $spacing*2;
+}
+
+.c-icon--green{
+	fill: $green--light;
+}

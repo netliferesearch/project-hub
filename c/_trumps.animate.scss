@@ -1,0 +1,26 @@
+///*------------------------------------*\
+//    #ANIMATIONS HELPER CLASSES
+//\*------------------------------------*/
+
+
+
+.u-animate{
+    transition: all 0.4s ease-out;
+}
+
+.u-animate--fast{
+    transition: all 0.2s ease-out;
+}
+
+.u-animate--slow{
+    transition: all 0.5s ease-out;
+    transition-delay: 0.2s;
+}
+
+.u-animate--hidden{
+    opacity: 0;
+}
+
+.u-animate--visible{
+    opacity: 1 !important;
+}

@@ -14,14 +14,14 @@ http://superfriend.ly/
 var Site = function(){
 
     this.init = function(){
-        
-        var _classNameToScrollTo    =   '.entry-latest',
-            _pointToScrollTo        =   $(_classNameToScrollTo).offset().top - 30,
+
+        var _classNameToScrollTo    =   '.js-box--latest',
+            _pointToScrollTo        =   $(_classNameToScrollTo).offset().top - 48,
             _viewport               =   $('html, body');
 
-        _viewport.delay(500).animate({
-            scrollTop: _pointToScrollTo
-        }, 2000, 'easeInOutQuint');
+        _viewport.scrollTop(_pointToScrollTo);
+
+
 
         // http://stackoverflow.com/questions/8858994/let-user-scrolling-stop-jquery-animation-of-scrolltop
         _viewport.bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
@@ -36,11 +36,20 @@ var Site = function(){
 
 
 
-/*-------------------------------------------    
+/*-------------------------------------------
     Initial Actions
 -------------------------------------------*/
 
-$(document).ready(function() {         
+$(document).ready(function() {
+    $('#redactor').redactor({
+        buttons: ['html','bold', 'italic','unorderedlist', 'orderedlist','link']
+    });
+    new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+        position: 'bottom right'
+    });
     var projectHub = new Site();
-    projectHub.init();        
+    projectHub.init();
+
 });

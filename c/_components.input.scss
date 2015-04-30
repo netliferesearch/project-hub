@@ -1,0 +1,33 @@
+.c-input{
+	background: $green--light;
+	padding: $spacing 0;
+	 @include media-query(small) {
+        padding: $spacing 0;
+    }
+}
+
+.c-input__select{
+	width: 100%;
+	height: $spacing*2;
+	background: $white;
+	border: 1px solid transparent;
+	border-radius: $btn-radius;
+	padding-left: $spacing/2;
+	&:focus{
+		outline: none;
+		border: 1px solid darken($green--light, 5%);
+	}
+}
+
+.c-input__text{
+	width: 100%;
+	height: $spacing*2;
+	background: $white;
+	border: 1px solid transparent;
+	border-radius: $btn-radius;
+	padding-left: $spacing/2;
+	&:focus{
+		outline: none;
+		border: 1px solid darken($green--light, 5%);
+	}
+}

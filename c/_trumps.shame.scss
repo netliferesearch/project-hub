@@ -1,0 +1,6 @@
+//fix until inuit updates clearfix to u-clearfix:
+
+.u-clearfix{
+    @extend .clearfix;
+}
+
