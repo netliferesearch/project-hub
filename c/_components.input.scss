@@ -19,7 +19,8 @@
 	}
 }
 
-.c-input__text{
+.c-input__text,
+%c-input__text{
 	width: 100%;
 	height: $spacing*2;
 	background: $white;
