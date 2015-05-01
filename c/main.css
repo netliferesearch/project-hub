@@ -879,6 +879,23 @@ ul {
   border: 0;
   padding: 0; }
 
+/**
+ * Small buttons.
+ */
+.o-btn--small {
+  padding: 5px 11px;
+  /* [7] */ }
+
+/**
+ * Round-ended buttons.
+ *
+ * 1. Overly-large value to ensure the radius rounds the whole end of the
+ *    button.
+ */
+.o-btn--pill {
+  border-radius: 100px;
+  /* [1] */ }
+
 /*------------------------------------*\
     #LIST-INLINE
 \*------------------------------------*/
@@ -1044,6 +1061,21 @@ ul {
     color: #000; }
     .c-btn--primary:hover svg, .c-btn--primary:focus svg {
       fill: #000; }
+
+.c-btn--secondary {
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #A7CC25;
+  color: #333; }
+  .c-btn--secondary:hover, .c-btn--secondary:focus {
+    color: #619210;
+    border-color: #619210; }
+
+.c-btn--selected, .c-btn--selected:hover, .c-btn--selected:active {
+  cursor: default;
+  color: #fff;
+  background: #A7CC25;
+  border: 1px solid #95b621; }
 
 /*------------------------------------*\
     #ICON
@@ -2438,6 +2470,32 @@ body .redactor-box-fullscreen {
 .u-mv {
   margin-top: 24px !important;
   margin-bottom: 24px !important; }
+
+/**
+ * Add tiny margins.
+ */
+.u-m-- {
+  margin: 6px !important; }
+
+.u-mt-- {
+  margin-top: 6px !important; }
+
+.u-mr-- {
+  margin-right: 6px !important; }
+
+.u-mb-- {
+  margin-bottom: 6px !important; }
+
+.u-ml-- {
+  margin-left: 6px !important; }
+
+.u-mh-- {
+  margin-right: 6px !important;
+  margin-left: 6px !important; }
+
+.u-mv-- {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important; }
 
 /**
  * Add small margins.

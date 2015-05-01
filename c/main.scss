@@ -136,6 +136,8 @@
 $inuit-namespace: o-;
 @import "../node_modules/inuit-box/objects.box.scss";
 @import "../node_modules/inuit-flag/objects.flag.scss";
+$inuit-enable-btn--small: true;
+$inuit-enable-btn--pill: true;
 @import "../node_modules/inuit-buttons/objects.buttons.scss";
 @import "../node_modules/inuit-list-inline/objects.list-inline";
 @import "../node_modules/inuit-list-ui/objects.list-ui";
@@ -174,6 +176,7 @@ $inuit-namespace: u-;
  $inuit-enable-margins: true;
  $inuit-enable-paddings: true;
 $inuit-enable-margins--small: true;
+$inuit-enable-margins--tiny: true;
  @import "../node_modules/inuit-spacing/trumps.spacing.scss";
  @import "../node_modules/inuit-responsive-spacing/_trumps.spacing-responsive.scss";
  @import "trumps.hide.responsive.scss";

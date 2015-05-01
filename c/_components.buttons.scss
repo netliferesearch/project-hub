@@ -23,3 +23,22 @@
     }
 }
 
+.c-btn--secondary{
+    font-size: $font-size-small;
+    background: $white;
+    border: 1px solid $green--light;
+    color: $gray--dark;
+    &:hover, &:focus{
+        color: $green;
+        border-color: $green;
+    }
+}
+
+.c-btn--selected{
+    &, &:hover, &:active{
+        cursor: default;
+        color: $white;
+        background: $green--light;
+        border: 1px solid darken($green--light, 5%);
+    }
+}
