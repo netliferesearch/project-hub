@@ -1300,6 +1300,20 @@ ul {
 .c-timeline__add .c-timeline__icon {
   margin-top: -24px; }
 
+a.c-timeline__edit {
+  font-size: 12px;
+  color: #DBDBDB;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  padding: 4px 6px;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  text-decoration: none; }
+  a.c-timeline__edit:hover, a.c-timeline__edit:active {
+    border-color: #767676;
+    color: #767676; }
+
 .c-input {
   background: #A7CC25;
   padding: 24px 0; }
