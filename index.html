@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js" ng-app="ProjectHub">
 
 <head>
     <title>Project Hub</title>
@@ -17,15 +14,17 @@
     <!-- <link href="c/project-hub.css" rel="stylesheet" type="text/css" /> -->
     <link href="c/main.css" rel="stylesheet" type="text/css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
 </head>
 
-<body>
+<body ng-controller="Hub">
     <div class="c-input">
         <div class="c-wrapper">
             <div class="c-wrapper__content">
                 <div class="o-layout o-layout--small">
                     <div class="o-layout__item u-1/2">
-                        <select name="" class="c-input__select u-mb-">
+                        <select name="" class="c-input__select u-mb-" ng-model="e.type">
                             <option value="" disabled="" selected="" style='display:none;'>Type oppdatering</option>
                             <option value="">Oppdatering</option>
                             <option value="">Brukertest</option>
@@ -34,16 +33,17 @@
                         </select>
                     </div><!--
                  --><div class="o-layout__item u-1/2" style="position: relative;">
-                        <input type="text" class="c-input__text u-mb-" placeholder="Dato" id="datepicker" style="position: relative;">
+                        <input type="text" class="c-input__text u-mb-" placeholder="Dato" id="datepicker" style="position: relative;" ng-model="e.date">
                     </div><!--
                  --><div class="o-layout__item u-1/1">
-                        <input type="text" class="c-input__text u-mb-" placeholder="Tittel">
+                        <input type="text" class="c-input__text u-mb-" placeholder="Tittel" ng-model="e.title">
                     </div>
                 </div>
 
 
-                <textarea name="" id="redactor" cols="30" rows="2" placeholder="Oppdatering" class="u-1/1"></textarea>
-                <a href="#" class="o-btn c-btn--primary">Lagre</a>
+                <textarea name="" id="redactor" cols="30" rows="2" placeholder="Oppdatering" class="u-1/1" ng-model="e.body">
+                </textarea>
+                <a ng-click="submitForm()" class="o-btn c-btn--primary">Lagre</a>
             </div>
         </div>
     </div>
@@ -61,12 +61,18 @@
                     </svg>
                 </div>
             </div>
-            <article class="o-box c-timeline c-timeline--future">
+            <article 
+                ng-repeat="e in events track by $index"
+                ng-class="{
+                    'c-timeline--future': e.future
+                }"
+                class="o-box c-timeline">
                 <svg viewBox="0 0 48 48" class="c-timeline__icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icon.svg#future"></use>
                 </svg>
-                <h1>Design Round 11</h1>
-                <time>June 4, 2014</time>
+                <h1>{{e.title}}</h1>
+                <time>{{e.date}}</time>
+                <div ng-bind-html="e.body"></div>
             </article>
 
             <article class="o-box c-timeline c-timeline--future">
@@ -140,6 +146,7 @@
     <script src="j/redactor.min.js"></script>
     <script src="j/pikaday.js"></script>
     <script src="j/project-hub.js"></script>
+    <script src="j/app.js"></script>
 
 
 
