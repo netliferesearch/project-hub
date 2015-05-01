@@ -16,6 +16,16 @@
 }
 
 .c-wrapper__header{
+    @include media-query(small) {
+        padding-left: $spacing*3;
+        &::before{
+            content: "";
+            width: 2px;
+            height: 100%;
+            display: block;
+            background: $green--light;
+        }
+    }
     @include media-query(medium) {
         position: fixed;
         top: 0;

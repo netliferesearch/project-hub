@@ -983,6 +983,15 @@ ul {
 .c-wrapper--small {
   max-width: 600px; }
 
+@media screen and (max-width: 750px) {
+  .c-wrapper__header {
+    padding-left: 72px; }
+    .c-wrapper__header::before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      display: block;
+      background: #A7CC25; } }
 @media screen and (min-width: 750px) {
   .c-wrapper__header {
     position: fixed;
