@@ -18,12 +18,16 @@
 .c-wrapper__header{
     @include media-query(small) {
         padding-left: $spacing*3;
+        position: relative;
         &::before{
             content: "";
             width: 2px;
             height: 100%;
             display: block;
-            background: $green--light;
+            background: #A7CC25;
+            left: 37px;
+            top: -24px;
+            position: absolute;
         }
     }
     @include media-query(medium) {

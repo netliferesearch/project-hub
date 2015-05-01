@@ -61,7 +61,15 @@
                     </svg>
                 </div>
             </div>
-            <article 
+            <article class="o-box c-timeline c-timeline--future">
+                <svg viewBox="0 0 48 48" class="c-timeline__icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icon.svg#future"></use>
+                </svg>
+                <h1>Brukertest</h1>
+                <time>May 5, 2015</time>
+            </article>
+            <div class="js-box--latest"></div>
+            <article
                 ng-repeat="e in events track by $index"
                 ng-class="{
                     'c-timeline--future': e.future,
@@ -73,10 +81,10 @@
                 </svg>
                 <h1>{{e.title}}</h1>
                 <time>{{e.date}}</time>
-                <div ng-bind-html="e.body"></div>
+                <div class="c-timeline__content" ng-bind-html="e.body"></div>
             </article>
 
-            <article class="o-box c-timeline c-timeline--future">
+            <!-- <article class="o-box c-timeline c-timeline--future">
                 <svg viewBox="0 0 48 48" class="c-timeline__icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icon.svg#future"></use>
                 </svg>
@@ -100,7 +108,7 @@
                     <li><a href="#">About</a></li>
                 </ul>
 
-            </article><!-- .entry -->
+            </article>
 
 
 
@@ -119,7 +127,7 @@
                     <li><a href="#">About</a></li>
                 </ul>
 
-            </article><!-- .entry -->
+            </article>
 
 
 
@@ -138,7 +146,7 @@
                     <li><a href="#">About</a></li>
                 </ul>
 
-            </article><!-- .entry -->
+            </article> -->
         </section>
     </div><!-- .wrap -->
 

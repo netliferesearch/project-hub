@@ -27,6 +27,17 @@
 		color: $gray--mid-light;
 		font-style: italic;
 	}
+	p{
+		margin-bottom: 1em;
+	}
+	p + ul,
+	p + ol{
+		margin-top: -1em;
+	}
+}
+
+.c-timeline__content{
+	margin-top: $spacing/2;
 }
 
 .c-timeline--future{
