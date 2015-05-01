@@ -6,10 +6,10 @@ angular.module('ProjectHub', [])
         console.log('a');
         var update = function() {
             $http.get(url).then(function(it) {
-                console.log(it);
                 $scope.events = it.data.map(function(i) {
                     i.future = i.date.match(/2016/);
                     i.body = $sce.trustAsHtml(i.body);
+                    i.svg = 'assets/icon.svg#' + (i.type || 'future');
                     return i;
                 });
             });

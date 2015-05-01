@@ -26,10 +26,10 @@
                     <div class="o-layout__item u-1/2">
                         <select name="" class="c-input__select u-mb-" ng-model="e.type">
                             <option value="" disabled="" selected="" style='display:none;'>Type oppdatering</option>
-                            <option value="">Oppdatering</option>
-                            <option value="">Brukertest</option>
-                            <option value="">Godkjent</option>
-                            <option value="">Presentasjon</option>
+                            <option value="oppdatering">Oppdatering</option>
+                            <option value="brukertest">Brukertest</option>
+                            <option value="godkjent">Godkjent</option>
+                            <option value="presentasjon">Presentasjon</option>
                         </select>
                     </div><!--
                  --><div class="o-layout__item u-1/2" style="position: relative;">
@@ -64,11 +64,12 @@
             <article 
                 ng-repeat="e in events track by $index"
                 ng-class="{
-                    'c-timeline--future': e.future
+                    'c-timeline--future': e.future,
+                    'c-box--primary u-mb': !e.future
                 }"
                 class="o-box c-timeline">
                 <svg viewBox="0 0 48 48" class="c-timeline__icon">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icon.svg#future"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{e.svg}}"></use>
                 </svg>
                 <h1>{{e.title}}</h1>
                 <time>{{e.date}}</time>
